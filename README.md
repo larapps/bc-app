@@ -11,6 +11,13 @@ You can install the package via composer:
 composer require larapps/bigcommerce-app
 ```
 
+### Needed ENV variables
+```
+APP_CLIENT_ID=XXXXXXXXXXXXXXXXX
+APP_SECRET_KEY=XXXXXXXXXXXXXXXXX
+APP_URL="https://api.bigcommerce.com/stores/"
+```
+
 ### Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
