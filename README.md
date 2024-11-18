@@ -18,6 +18,36 @@ APP_SECRET_KEY=XXXXXXXXXXXXXXXXX
 APP_URL="https://api.bigcommerce.com/stores/"
 ```
 
+### Migration
+```php artisan migrate```
+
+To create a table for maintaining bigcommerce access tokens.
+
+### Implementation
+```
+routes/web.php
+
+use Illuminate\Http\Request;
+use Larapps\BigcommerceApp\BigcommerceApp;
+
+Route::get('/auth/install', function(Request $request){
+    $bigcommerceApp = new BigcommerceApp();
+    return $bigcommerceApp->install( $request );
+})->name('app.install');
+
+Route::get('/auth/load', function(Request $request){
+    $bigcommerceApp = new BigcommerceApp();
+    return $bigcommerceApp->load( $request );
+})->name('app.load');
+
+Route::get('/auth/uninstall', function(Request $request){
+    $bigcommerceApp = new BigcommerceApp();
+    return $bigcommerceApp->uninstall( $request );
+})->name('app.uninstall');
+
+```
+
+
 ### Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
